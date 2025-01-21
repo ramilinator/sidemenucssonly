@@ -1,0 +1,197 @@
+:root { 
+    --background-color: #150a33; /* Background color for the entire website, including individual sections */
+    --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
+    --heading-color: #1e5068; /* Color for headings, subheadings and title throughout the website */
+    --accent-color: #8256f1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: cadetblue; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: #c4b2ed; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+    --global-spacing: 16px;
+    --menu-link-font-size: 1.5em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: var(--default-color);
+    text-decoration: none;
+    font-size: var(--menu-link-font-size);
+}
+
+ul,li {
+    list-style: none;
+    cursor: pointer;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--default-color);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--global-spacing)* 5.5);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+}
+
+.menu-button {
+    position: fixed;
+    left: calc(var(--global-spacing)*2);
+    top: calc(var(--global-spacing)*2);
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-button-text {
+    font-size: 28px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    user-select: none;
+    padding-block: 10px;
+}
+
+.menu-icon .line, .menu-icon .line::before, .menu-icon .line::after  {
+    background: var(--default-color);
+    width: 24px;
+    height: 2px;
+    display: block;
+    transition: all .2s ease-out;
+    position: relative;
+}
+
+.menu-icon .line::before, .menu-icon .line::after {
+    content: '';
+    position: absolute;
+}
+
+.menu-icon .line::before {
+    top: -8px;
+}
+
+.menu-icon .line::after {
+    top: 8px;
+}
+
+.menu-icon label {
+    font-size: 22px;
+    line-height: 0;
+}
+
+.menu {
+    background: darkcyan;
+}
+
+input#menu-toggle {
+    display: none;
+}
+
+#menu-toggle ~ .header .menu {
+    left: -100%;
+}
+  
+#menu-toggle:checked ~ .header .menu {
+    left: 0;
+    display: block;
+}
+
+#menu-toggle:checked ~ .header .menu-icon .line {
+    background: transparent;
+}
+
+#menu-toggle:checked ~ .header .menu-icon .line::before, #menu-toggle:checked ~ .header .menu-icon .line::after {
+    top: 0;
+    background: var(--default-color);
+}
+
+#menu-toggle:checked ~ .header .menu-icon .line::before {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .header .menu-icon .line::after {
+    transform: rotate(-45deg);
+}
+
+#menu-toggle:checked ~ .header .menu .menu-list li {
+    transform: translateX(0);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    /* padding: calc(var(--global-spacing)*2);
+    padding-top: calc(var(--global-spacing)* 4.5); */
+    transition: all .15s ease-in-out;
+}
+
+.menu-head {
+    height: 85px;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--global-spacing);
+}
+
+.menu-list li {
+    padding: var(--global-spacing) calc(var(--global-spacing)*2);
+    padding-block: var(--global-spacing);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menu-list li:nth-child(1) {
+    transition-delay: 100ms;
+}
+
+.menu-list li:nth-child(2) {
+    transition-delay: 150ms;
+}
+
+.menu-list li:nth-child(3) {
+    transition-delay: 200ms;
+}
+
+.menu-list li:nth-child(4) {
+    transition-delay: 250ms;
+}
+
+.menu-list li:nth-child(5) {
+    transition-delay: 350ms;
+}
+
+.menu-list li:nth-child(6) {
+    transition-delay: 100ms;
+}
+
+.menu-list li:hover {
+    background: var(--surface-color);
+}
+
+
+.content {
+    padding: calc(var(--global-spacing)* 2);
+}
