@@ -1,9 +1,9 @@
 :root { 
-    --background-color: #150a33; /* Background color for the entire website, including individual sections */
+    --background-color: #FF8552; /* Background color for the entire website, including individual sections */
     --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
     --heading-color: #1e5068; /* Color for headings, subheadings and title throughout the website */
-    --accent-color: #8256f1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-    --surface-color: cadetblue; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --accent-color: #297373; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: #39393a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
     --contrast-color: #c4b2ed; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
     --global-spacing: 16px;
     --menu-link-font-size: 1.5em;
@@ -15,7 +15,7 @@
 }
 
 body {
-	background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+	background: var(--background-color);
     height: 100vh;
 }
 
@@ -46,6 +46,10 @@ body {
     align-items: center;
     height: calc(var(--global-spacing)* 5.5);
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+}
+
+.menu {
+    background: var(--surface-color);
 }
 
 .menu-button {
@@ -93,10 +97,6 @@ body {
 .menu-icon label {
     font-size: 22px;
     line-height: 0;
-}
-
-.menu {
-    background: darkcyan;
 }
 
 input#menu-toggle {
@@ -184,11 +184,11 @@ input#menu-toggle {
 }
 
 .menu-list li:nth-child(6) {
-    transition-delay: 100ms;
+    transition-delay: 400ms;
 }
 
 .menu-list li:hover {
-    background: var(--surface-color);
+    background: var(--accent-color);
 }
 
 
